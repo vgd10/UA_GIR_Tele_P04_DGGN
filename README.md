@@ -16,7 +16,7 @@ Image was built on labs computers and personal computers. To save time, the imag
 
 To launch the container using docker_run.sh, lab computer required RUNTIME parameter of the file to be set as "", personal computer needed nvidia toolbox installation (see previous episode P03, currently unavailable)
 
-Furthermore, only lab computers kept making progress with the next steps of trying the software (seemingly personal computer could launch the container at the end). All steps could be completed, but needed to move package folder kinova_gen3 to folder with the high level software test as it could not reach the code
+Furthermore, only lab computers kept making progress with the next steps of trying the software (seemingly personal computer could launch the container at the end). All steps could be completed, although dependecies installation have been forgotten (use ./install.sh or the current test folder on this repository + pip3 install pygame)
 
 #### Other insight gained
 
