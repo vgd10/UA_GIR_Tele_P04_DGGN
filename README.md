@@ -1,5 +1,19 @@
 # UA_GIR_Tele_P04_DGGN
 Code to run PHANTOM Omni + Kinova Kortex robots as a teleoperated pair with a GUI. The Omni robot is the obvious master expected to be physical, Kinova is simulated
 
-# USE
+## USE
 Build the docker image, start or create the container
+
+## SESSION PROGRESS
+
+a.k.a The amazing adventures of the teleoperation group 3
+
+### S1 (Breaking the ice session)
+
+- Set up the container, try the basic software (see Manual_de_Uso__Control_del_Kinova_Gen3_en_Docker.pdf)
+
+Image was built on labs computers and personal computers. To save time, the image itself has been saved on 2 USB (contributors vgd10 and nolandius777) once built on labs computer and then it was passed to personal computer.
+
+To launch the container using docker_run.sh, lab computer required RUNTIME parameter of the file to be set as "", personal computer needed nvidia toolbox installation (see previous episode P03, currently unavailable)
+
+Furthermore, only lab computers kept making progress with the next steps of trying the software (seemingly personal computer could launch the container at the end). All steps could be completed, but needed to move package folder kinova_gen3 to folder with the high level software test as it could not reach the code
