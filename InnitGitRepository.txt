@@ -1,0 +1,8 @@
+git init
+git config --global user.name "Tu user name"
+git config --global user.email e-mail
+git remote add origin https://github.com/usuario_propietario_proyecto/nombre_proyecto.git
+git remote set-url origin https://tu_nombre_de_usuario:key@github.com/usuario_propietario_proyecto/nombre_proyecto.git
+git fetch origin
+git switch main(la branch q quieras)
+git branch (comprobar la branch en la que estas)
