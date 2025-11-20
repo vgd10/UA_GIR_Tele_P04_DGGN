@@ -1,8 +1,14 @@
 # UA_GIR_Tele_P04_DGGN
-Code to run PHANTOM Omni + Kinova Kortex robots as a teleoperated pair with a GUI. The Omni robot is the obvious master expected to be physical, Kinova is simulated
+Code to run PHANTOM Omni + Kinova Kortex robots as a teleoperated pair with a GUI. The Omni robot is the obvious master expected to be physical, Kinova is simulated (Linux OS required)
 
 ## USE
-Build the docker image, start or create the container
+- Build the docker image (using Dockerfile and unzipped Phantom files) and start or create the container (with docker_run.sh, current folder where it is run would be mounted on path /catkin_ws/shared_folder in the container environment)
+    ``` cmd
+    docker build -t kinova-phantom .
+    ./docker_run.sh # kinova-phanthom_container will be created or resumed
+    ´´´
+- Remember to have implementation software on same folder where you started the docker container
+- Enjoy !!!
 
 ## SESSION PROGRESS
 
