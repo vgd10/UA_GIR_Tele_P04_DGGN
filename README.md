@@ -37,14 +37,14 @@ Furthermore, only lab computers kept making progress with the next steps of tryi
 
 #### ROADMAP PLANNED
 
-Subgroup 1 (ekaitzduque & vgd10): Get the kinova robot moving by topics
+- Subgroup 1 (ekaitzduque & vgd10): Get the kinova robot moving by topics
 
-Subgroup 2 (nolandius777 PabloGorbaran): Create the markers and force simulated of rigid spheres
+- Subgroup 2 (nolandius777 PabloGorbaran): Create the markers and force simulation of rigid spheres
 
-Pending: ...
+- Pending: Calculate escale transformation between phantom and kinova, make the communication between them and do the needed changes to set it all
 
 #### Insight gained
 
--Subgroup 1: Topic used tool_twist_vel. Sets a velocity for next step. Requires substraction of current and previous position of phantom, division by time passed and then escalate it to kinova.
+- Subgroup 1: Topic used tool_twist_vel. Sets a velocity for next step. Requires substraction of current and previous position of phantom, division by time passed and then escalate it to kinova.
 
--Subgroup 2: ???
+- Subgroup 2: ???
