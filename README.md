@@ -30,3 +30,21 @@ Furthermore, only lab computers kept making progress with the next steps of tryi
 - Maximum grade without GUI is 9. Once done a GUI, an extra point is granted if robot and GUI running computers are not the same
 - Maybe the files on test folder are made by other students (suspicious of home_kinova.py, self.arm_home initialization comment)
 - Simulated dynamic objects would be first spheres (using the knowledge of P03 at reverse), then cubes can be tried
+
+### S2 (S1 never happened...)
+
+- Get a roadmap to approach the problem
+
+#### ROADMAP PLANNED
+
+Subgroup 1 (ekaitzduque & vgd10): Get the kinova robot moving by topics
+
+Subgroup 2 (nolandius777 PabloGorbaran): Create the markers and force simulated of rigid spheres
+
+Pending: ...
+
+#### Insight gained
+
+-Subgroup 1: Topic used tool_twist_vel. Sets a velocity for next step. Requires substraction of current and previous position of phantom, division by time passed and then escalate it to kinova.
+
+-Subgroup 2: ???
