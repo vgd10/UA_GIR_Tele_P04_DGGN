@@ -11,6 +11,20 @@ First download this repo:
 git clone https://github.com/vgd10/UA_GIR_Tele_P04_DGGN.git
 ```
 
+Prepare the repo for docker:
+
+```cmd
+mv UA_GIR_Tele_P04_DGGN tele
+mv tele/Docker_Image\&Container_Building\&Startup/ tele/docker
+mv tele/docker/Dockerfile Dockerfile
+mv tele/docker/docker_run.sh docker_run.sh
+mv tele/docker/Phanthom.tar Phanthom.tar
+tar -xzvf Phanthom.tar Phanthom
+mv tele/tests tests
+rm Phanthom.tar
+rm -rf tele
+```
+
 And allow your docker daemon to access the server of host computer, so GUI appears:
 
 ```cmd
