@@ -3,32 +3,59 @@ Code to run PHANTOM Omni + Kinova Kortex robots as a teleoperated pair with a GU
 
 ## USE
 - Build the docker image (using Dockerfile and unzipped Phantom files) and start or create the container (with docker_run.sh, current folder where it is run would be mounted on path /catkin_ws/shared_folder in the container environment)
-    ```cmd
-    docker build -t kinova-phantom .
-    ./docker_run.sh # kinova-phanthom_container will be created or resumed
-    ```
 
+Run this on a folder with Dockerfile, docker_run.sh and the folders Phantom (unzipped) and tests
 
-    ```cmd
-    cd /catkin_ws/kinova/
-    source install/setup.bash
-    ros2 launch kortex_description view_robot.launch.py robot_type:=gen3 dof:=7 gripper:=robotiq_2f_140  use_sim_time:=true launch_rviz:=true
-    ```
-    ```cmd
-    sudo docker exec -it kinova-phanthom_container /bin/bash
-    cd /catkin_ws/shared_folder/pyKinovaGen3/tests/
-    python3 ee_cartesian_velocity_controller.py
-    ```
-    ```cmd
-    sudo docker exec -it kinova-phanthom_container /bin/bash
-    cd /catkin_ws/shared_folder/pyKinovaGen3/tests/
-    python3 home_kinova.py
-    ```
-    ```cmd
-    sudo docker exec -it kinova-phanthom_container /bin/bash
-    cd /catkin_ws/shared_folder/pyKinovaGen3/tests/
-    python3 cartesian_key_teleop.py
-    ```
+```cmd
+docker build -t kinova-phantom .
+```
+Create or startup the container (in the same path where image was created)
+
+```cmd
+./docker_run.sh # kinova-phanthom_container will be created or resumed
+```
+
+```cmd
+sudo docker exec -it kinova-phanthom_container /bin/bash
+```
+
+<br/><br/>
+If you want to open more terminals:
+
+```cmd
+docker exec -it kinova-phanthom_container /bin/bash
+```
+<br/>
+To launch the kinova robot (go to folder then start node) (remember to close the other pop up joint control GUI):
+<br/>
+
+```cmd
+cd /catkin_ws/kinova/
+source install/setup.bash
+```
+
+```cmd
+ros2 launch kortex_description view_robot.launch.py robot_type:=gen3 dof:=7 gripper:=robotiq_2f_140  use_sim_time:=true launch_rviz:=true
+```
+<br/><br/>
+Go to kinova control files (in 3 different terminals)
+
+```cmd
+cd /catkin_ws/shared_folder/tests/
+```
+Then for one of each terminal run one of the commands in order (second one will terminate)
+
+```cmd
+python3 ee_cartesian_velocity_controller.py
+```
+
+```cmd
+python3 home_kinova.py
+```
+
+```cmd
+python3 cartesian_key_teleop.py
+```
 
 
 
