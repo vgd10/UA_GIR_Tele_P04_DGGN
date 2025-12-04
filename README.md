@@ -42,14 +42,14 @@ Run this on a folder with Dockerfile, docker_run.sh and the folders Phantom (unz
 ```cmd
 docker build -t kinova-phantom .
 ```
-Create or startup the container (in the same path where image was created):
+Create or startup the container (in the same path where image was created) (kinova-phanthom_container will be created or resumed):
 
 ```cmd
-./docker_run.sh # kinova-phanthom_container will be created or resumed
+./docker_run.sh
 ```
 
 <br/><br/>
-If you want to open more terminals (first one for personnal computer, second one for labs):
+If you want to open more terminals (first one for personal computer, second one for labs):
 
 ```cmd
 sudo docker exec -it kinova-phanthom_container /bin/bash
@@ -172,3 +172,11 @@ Furthermore, only lab computers kept making progress with the next steps of tryi
 - Subgroup 1: Topic used tool_twist_vel. Sets a velocity for next step. Requires substraction of current and previous position of phantom, division by time passed and then escalate it to kinova.
 
 - Subgroup 2: ???
+
+### S3 (Frozen solid)
+
+- No advancements done in previous session time gap. Same objectives
+
+#### Insight gained
+
+- Nothing at all, but github page readme has improved a lot
