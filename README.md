@@ -6,6 +6,31 @@ Code to run PHANTOM Omni + Kinova Kortex robots as a teleoperated pair with a GU
     ```cmd
     docker build -t kinova-phantom .
     ./docker_run.sh # kinova-phanthom_container will be created or resumed
+    ```
+
+
+    ```cmd
+    cd /catkin_ws/kinova/
+    source install/setup.bash
+    ros2 launch kortex_description view_robot.launch.py robot_type:=gen3 dof:=7 gripper:=robotiq_2f_140  use_sim_time:=true launch_rviz:=true
+    ```
+    ```cmd
+    sudo docker exec -it kinova-phanthom_container /bin/bash
+    cd /catkin_ws/shared_folder/pyKinovaGen3/tests/
+    python3 ee_cartesian_velocity_controller.py
+    ```
+    ```cmd
+    sudo docker exec -it kinova-phanthom_container /bin/bash
+    cd /catkin_ws/shared_folder/pyKinovaGen3/tests/
+    python3 home_kinova.py
+    ```
+    ```cmd
+    sudo docker exec -it kinova-phanthom_container /bin/bash
+    cd /catkin_ws/shared_folder/pyKinovaGen3/tests/
+    python3 cartesian_key_teleop.py
+    ```
+
+
 
 - Remember to have implementation software on same folder where you started the docker container
 - Enjoy !!!
