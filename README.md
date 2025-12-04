@@ -3,7 +3,20 @@ Code to run PHANTOM Omni + Kinova Kortex robots as a teleoperated pair with a GU
 
 ## USE
 
-How to start up docker and robots, step by step:
+How to start up docker and robots, step by step
+
+First download this repo:
+
+```cmd
+git clone https://github.com/vgd10/UA_GIR_Tele_P04_DGGN.git
+```
+
+And allow your docker daemon to access the server of host computer, so GUI appears:
+
+```cmd
+xhost +
+```
+
 
 ### Build docker image and container
 
