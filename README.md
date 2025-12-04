@@ -2,14 +2,20 @@
 Code to run PHANTOM Omni + Kinova Kortex robots as a teleoperated pair with a GUI. The Omni robot is the obvious master expected to be physical, Kinova is simulated (Linux OS required)
 
 ## USE
-- Build the docker image (using Dockerfile and unzipped Phantom files) and start or create the container (with docker_run.sh, current folder where it is run would be mounted on path /catkin_ws/shared_folder in the container environment)
 
-Run this on a folder with Dockerfile, docker_run.sh and the folders Phantom (unzipped) and tests
+How to start up docker and robots, step by step:
+
+### Build docker image and container
+
+Build the docker image (using Dockerfile and unzipped Phantom files) and start or create the container (with docker_run.sh, current folder where it is run would be mounted on path /catkin_ws/shared_folder in the container environment)
+
+<br/>
+Run this on a folder with Dockerfile, docker_run.sh and the folders Phantom (unzipped) and tests:
 
 ```cmd
 docker build -t kinova-phantom .
 ```
-Create or startup the container (in the same path where image was created)
+Create or startup the container (in the same path where image was created):
 
 ```cmd
 ./docker_run.sh # kinova-phanthom_container will be created or resumed
@@ -27,6 +33,9 @@ sudo docker exec -it kinova-phanthom_container /bin/bash
 docker exec -it kinova-phanthom_container /bin/bash
 ```
 <br/>
+
+### Prepare kinova robot control
+
 To launch the kinova robot (go to folder then start node) (remember to close the other pop up joint control GUI):
 <br/>
 
@@ -57,11 +66,46 @@ python3 home_kinova.py
 ```cmd
 python3 cartesian_key_teleop.py
 ```
+<br/><br/>
 
+### Prepare phantom robot
 
+Open another terminal and go to phantom folder:
 
-- Remember to have implementation software on same folder where you started the docker container
-- Enjoy !!!
+```cmd
+cd catkin_ws/phantom
+```
+Do this connection for communication (first one for USB, second one for ethernet)
+
+```cmd
+./start_omni_USB.sh
+```
+
+```cmd
+./start_omni_LAN.sh
+```
+
+Then check that connect is fine:
+
+```cmd
+./Touch_Diagnostic
+```
+
+Run the haptic sensor as another check with:
+
+```cmd
+ros2 run sensable_phantom sensable_phantom
+```
+
+<br/> <br/>
+Finally, run the phanthom base to have the true robot connnection:
+
+```cmd
+source install/setup.bash
+ros2 launch sensable_phantom_models omni_rviz.launch.py
+```
+
+<br/><br/>
 
 ## SESSION PROGRESS
 
