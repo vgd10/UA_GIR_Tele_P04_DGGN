@@ -15,12 +15,13 @@ Create or startup the container (in the same path where image was created)
 ./docker_run.sh # kinova-phanthom_container will be created or resumed
 ```
 
+<br/><br/>
+If you want to open more terminals (first one for personnal computer, second one for labs):
+
 ```cmd
 sudo docker exec -it kinova-phanthom_container /bin/bash
 ```
 
-<br/><br/>
-If you want to open more terminals:
 
 ```cmd
 docker exec -it kinova-phanthom_container /bin/bash
