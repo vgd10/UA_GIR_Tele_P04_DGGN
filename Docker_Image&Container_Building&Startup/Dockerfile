@@ -114,4 +114,6 @@ COPY ./Phanthom/Touch_Diagnostic /catkin_ws/phanthom/Touch_Diagnostic
 COPY ./Phanthom/Touch_Setup /catkin_ws/phanthom/Touch_Setup
 RUN chmod +x /catkin_ws/phanthom/start_omni_USB.sh /catkin_ws/phanthom/start_omni_LAN.sh /catkin_ws/phanthom/Touch_Diagnostic /catkin_ws/phanthom/Touch_Setup
 
+RUN apt-get update && apt-get install -y pygame
+
 # apt install x11-apps -> xeyes o xclock
