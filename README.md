@@ -161,7 +161,7 @@ echo "[options.entry_points]" >> setup.cfg && echo "console_scripts = " >> setup
 [Source code expected to be in the original path where this started] Copy source code of the nodes, compile and install the workspace
 
 ```cmd
-cd telep04_proy && cp /catkin_ws/shared_folder/gravityWell.py . && cp /catkin_ws/shared_folder/esfera_rviz.py . && cd /ros2_telep04_ws && colcon build --symlink-install && source install/setup.bash
+cd /ros2_telep04_ws/src/telep04_proy/telep04_proy && cp /catkin_ws/shared_folder/gravityWell.py . && cp /catkin_ws/shared_folder/esfera_rviz.py . && cd /ros2_telep04_ws && colcon build --symlink-install && source install/setup.bash
 ```
 <br/>
 
