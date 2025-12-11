@@ -134,6 +134,37 @@ ros2 launch sensable_phantom_models omni_rviz.launch.py
 
 <br/><br/>
 
+### Building workspace of the project
+
+Create folders for workspace and package (prepared to create package)
+
+```cmd
+mkdir -p ros2_telep04_ws/src && cd ros2_telep04_ws/src
+```
+
+Create the package with nothing but dependencies and compile it (prepared to modify setup files)
+
+```cmd
+ros2 pkg create telep04_proy --build-type ament_python --dependencies rclpy geometry_msgs visualization_msgs && cd .. && colcon build --symlink-install && cd src/telep04_proy
+```
+[Considering current path is where setups are] Prepare setup.py file with both nodes <br/>
+[**WARNING**: First head command could need to be set as -n 26, depending of ros2 jazzy build, maybe. Variable after license varies format]
+
+```cmd
+head -n 26 setup.py > setup2.py && echo "            'gravityWell = telep04_proy.gravityWell:main'," >> setup2.py && echo "            'esfera_rviz = telep04_proy.esfera_rviz:main'," >> setup2.py && tail -n 3 setup.py >> setup2.py && mv setup2.py setup.py
+```
+ Prepare setup.cfg file with both nodes
+
+```cmd
+echo "[options.entry_points]" >> setup.cfg && echo "console_scripts = " >> setup.cfg && echo "    gravityWell = telep04_proy.gravityWell:main" >> setup.cfg && echo "    esfera_rviz = telep04_proy.esfera_rviz:main" >> setup.cfg
+```
+[Source code expected to be in the original path where this started] Copy source code of the nodes, compile and install the workspace
+
+```cmd
+cd telep04_pry && cp /catkin_ws/shared_folder/gravityWell.py . && cp /catkin_ws/shared_folder/esfera_rviz.py . && cd /ros2_telep04_ws && colcon build --symlink-install && source install/setup.bash
+```
+<br/>
+
 ## SESSION PROGRESS
 
 a.k.a The amazing adventures of the teleoperation group 3
