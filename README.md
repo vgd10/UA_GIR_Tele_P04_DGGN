@@ -165,6 +165,11 @@ cd /ros2_telep04_ws/src/telep04_proy/telep04_proy && cp /catkin_ws/shared_folder
 ```
 <br/>
 
+
+### Docker problems
+
+Currently on computer labs, image building can cause almost complete SO freeze (only mouse moves, and in a weird way). Cause unkwnown, as sometimes it can go well even in the same computer after power reset
+
 ## SESSION PROGRESS
 
 a.k.a The amazing adventures of the teleoperation group 3
